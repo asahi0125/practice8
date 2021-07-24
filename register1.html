@@ -1,0 +1,118 @@
+<?
+require ( 'xmpf_tbl.php');
+?> 	
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sample EC - 会員登録</title>
+    
+</head>
+<body>
+<div align="center">
+    Sample EC - 会員登録[1/4]<br>
+<br>
+<sample>は必須です</sample>
+<table>
+    <form action="form.php" method="post">
+<tr>
+    <td align="right">メールアドレス<font color="red">
+</font></td>
+    <td><input type="text" name="email1" size=48 maxlength=64></td>
+</tr>
+<tr>
+    <td></td>
+    <td><small>半角4文字まで。ログインＩＤになります　（例　saga@sample-ec.com）</small></td>
+</tr>
+    <td alighn="password" name="passwd" size=16 maxlength=16></td>
+</tr>
+<tr>
+    <td></td>
+    <td><small>半角英数字１６文字まで　（例　saga.1192）
+</small></td>
+</tr>
+<tr>
+    <td align="right">姓名（漢字）<font color="red">
+</font></td>
+    <td><input type="text" name="name_kanji" size=48 maxlength=32></td>
+<tr>
+<tr>
+    <td></td>
+    <td><small>半角３２文字まで（例　田中）</small></td>
+</tr>
+<tr>
+    <td align="right">姓名（かな）<font color="red">
+</font></td>
+    <td><input type="text" name="name_kana" size=48 maxlength=32></td>
+<tr><tr>
+    <td></td>
+    <td><small>半角３２文字まで（例　たなか）</small></td>
+</tr>
+<tr>
+    <td align="right">性別</td>
+    <td>
+        <input type="radio" name="sex" value=1 chacked>男性
+        <input type="radio" name="sex" value=2 chacked>女性
+    </td>
+</td>
+<tr>
+     <td align="right">生年月日</td>
+     <td>
+         <select name="year">
+<? for ( $n = 1900; $n <= 2021; $n ++) echo "<option value=$n>$n\n"; ?>
+	</select>年
+	<select name="month">
+<? for ( $n = 1; $n <= 12; $n ++) echo "<option value=$n>$n\n"; ?>
+	</select>月
+	<select name="day">
+<? for ( $n = 1; $n <= 31; $n ++) echo "<option value=$n>$n\n"; ?>
+	</select>日<br>
+</td>
+<tr>
+<tr>
+	<td align="right">郵　便　番　号　<font color="red">*</font></td>
+	<td>
+		<input type="text" name="postall" size=5 maxlength=5>
+		<input type="text" name="postal2" size=6 maxlength=6>
+	</td>
+<tr>
+	<td></td>
+	<td><small>半角数字[<a href="http://www.post.japan-post.jp/zipcode/" target="_blank">郵便番号検索</a>](例100-0000)</small></td>
+	</tr>
+	<tr>
+		<td align="right">都道府県</td>
+	<td>
+		<select name="xmpf">
+<? foreach ( $xmpf_tbl as $key => $value ) echo"<option value=$key>$value\n"; ?>
+		</select>
+	</td>
+<tr>
+<tr>
+	<td align="right">住所<font color="red">*</font></td>
+	<td><input type="text" name="address1" size=48 maxlength="64"></td>
+<tr>
+<tr>
+	<td></td>
+	<td><small>半角６４文字（例　練馬区0-0-0）</small></td>
+</tr>
+<tr>
+	<td align="right">住所</td>
+	<td><input type="text" name="address2" size=48 maxlength="64"></td>
+<tr>
+<tr>
+	<td></td>
+	<td><small>半角６４文字まで（例　サンプルマンション100号室）</small></td>
+</tr>
+<tr>
+	<td></td>
+	<td><input type="submit" value="- 確認 -"></td>
+</tr>
+</form>
+</table>
+</body>
+</html>	
+
+
+
+        
